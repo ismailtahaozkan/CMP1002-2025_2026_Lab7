@@ -1,7 +1,7 @@
 # Lab W7: C++ OOP Review
 
 ## Topic
-Comprehensive review of Weeks 1–5: Classes, Encapsulation, Constructors, Destructors, Copy Constructors, Strings, Operator Overloading, and Function Overloading.
+Comprehensive review of Weeks 1–6: Classes, Encapsulation, Constructors, Destructors, Copy Constructors, Strings, Operator Overloading, and Function Overloading.
 
 ## Duration
 40 minutes
@@ -18,7 +18,7 @@ By the end of this lab, students will be able to:
 8. Read and interpret a UML class diagram
 
 ## Prerequisites
-- Weeks 1–5 lecture material
+- Weeks 1–6 lecture material
 - Basic understanding of C++ syntax
 - Familiarity with `std::string`
 
