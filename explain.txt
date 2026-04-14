@@ -1,0 +1,77 @@
+C++ OOP REVIEW - QUICK REVISION SHEET
+======================================
+
+WHAT IS A CLASS?
+A class is a blueprint for creating objects. It bundles data (variables)
+and behavior (functions) into one unit.
+
+    class Car {
+    private:
+        int speed;       // data
+    public:
+        void drive();    // behavior
+    };
+
+WHY ENCAPSULATION?
+Keep data private, expose it through public methods. This prevents
+invalid states. Example: GPA should never be negative.
+
+    private: double gpa;
+    public:
+      void setGpa(double g) {
+          if (g >= 0.0 && g <= 4.0) gpa = g;
+      }
+
+CONSTRUCTORS - 3 TYPES
+  Default:         Student()           -> sets defaults
+  Parameterized:   Student("Ali", 101) -> sets from arguments
+  Copy:            Student(other)      -> copies another object
+
+DESTRUCTOR
+Called automatically when an object goes out of scope.
+Used for cleanup. Syntax: ~ClassName() { ... }
+
+COPY CONSTRUCTOR
+Creates a NEW object from an existing one. Signature:
+    Student(const Student& other)
+"const" = don't modify the original.
+"&" = pass by reference (don't copy again).
+
+OPERATOR OVERLOADING
+Lets you use +, ==, <, << etc. with your own classes.
+
+    bool operator==(const Student& other) const {
+        return id == other.id;
+    }
+
+The "friend" keyword lets operator<< access private members:
+    friend ostream& operator<<(ostream& os, const Student& s);
+
+FUNCTION OVERLOADING
+Same function name, different parameter lists:
+    int add(int a, int b);
+    double add(double a, double b);
+Compiler picks the right version based on arguments.
+
+STRING OPERATIONS
+    string s = "hello";
+    s.length()          // 5
+    s[0]                // 'h'
+    toupper(s[0])       // 'H'
+
+CLASS DIAGRAM (UML)
++------------------+
+|     Student      |   <- class name
++------------------+
+| - name: string   |   <- private members (-)
+| - id: int        |
+| - gpa: double    |
++------------------+
+| + getName(): string  <- public methods (+)
+| + setGpa(double)     |
+| + operator==()       |
++------------------+
+
+  - means private
+  + means public
+  # means protected
